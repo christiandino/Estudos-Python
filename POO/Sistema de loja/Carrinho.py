@@ -12,7 +12,7 @@ class Carrinho:
     def adicionar_item(self, produto, qtd_itens):
         existe = False
         for prod_loja in self.loja.prod_loja:
-             # item carrinho       # produto na loja
+             # item da loja       # produto que vai para o carrinho
             if prod_loja.produto == produto.produto:
                 existe = True
         if not existe: raise Exception("Esse produto não existe na loja")
@@ -39,6 +39,8 @@ class Carrinho:
         if len(self.lista_de_produtos) == 0:
             self.lista_de_produtos.append(item)
 
+
+
     def devolver_estoque(self, produto, qtd_itens):
         existe = False
         for prod in self.lista_de_produtos:
@@ -57,40 +59,7 @@ class Carrinho:
                 
             
 
-
     def listar_carrinho(self):
         df_table = pd.DataFrame([{'produto': item['produto'].produto, 'preco': item['produto'].preco, 'qtd_produto': item['qtd_itens']} for item in self.lista_de_produtos])
         tabela_formatada = tabulate(df_table, headers=['Id','Produto','Preço','Qtd produto'], tablefmt="pipe")
         return tabela_formatada
-
-
-
-
-
-
-
-
-
-
-
-        
-    # def devolver_estoque(self, produto, qtd_itens):
-    #     encontrado_no_carrinho = False
-    #     for prod in self.lista_de_produtos:
-    #                 # item no carrinho    # item na loja
-    #         if prod['produto'].produto == produto.produto:
-    #             if qtd_itens <= prod['qtd_itens']:
-    #                 # alterando o meu estoque
-    #                 produto.qtd_estoque += qtd_itens
-    #                 # alterando o meu carrinho
-    #                 prod['qtd_itens'] -= qtd_itens
-
-    #                 if prod['qtd_itens'] == 0:
-    #                     self.lista_de_produtos.remove(prod)
-    #                 encontrado_no_carrinho = True
-    #             else:
-    #                 raise Exception(f"Você está tentando devolver mais itens do que há no carrinho. Itens no carrinho: {prod['qtd_itens']}")
-    #             break
-
-    #     if not encontrado_no_carrinho:
-    #         raise Exception("Esse produto não está no carrinho")
