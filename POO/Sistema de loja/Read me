@@ -1,0 +1,18 @@
+Funcionalidades do Sistema de Loja:
+1. Adicionar produtos ao estoque da loja.
+2. Remover produtos do estoque da loja.
+3. Registrar clientes na loja a partir da primeira compra.
+4. Processar compras de clientes, verificando se os produtos estão disponíveis em
+estoque.
+5. Exibir o inventário de produtos.
+6. Exibir os clientes e suas compras.
+7. Exibir saldo restante do cliene
+8. Exibir saldo da loja
+9. Adicionar produtos no carrinho
+10.Remover produtos no carrinho
+11. Listas produtos comprados dos clientes (histórico)
+12. Exibir produtos mais vendidos
+13. Listar produtos do estoque
+14. Criar mais de uma loja.
+
+
